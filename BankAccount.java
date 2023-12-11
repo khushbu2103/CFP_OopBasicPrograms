@@ -4,23 +4,27 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BankAccount {
-    private int balance;
-    private long accountNumber;
-}
-class Bank
+
+public class BankAccount
 {
+    Scanner sc = new Scanner(System.in);
+    double balance = 5000;
     public void Deposit()
     {
-
-        System.out.println("deposit");
+        System.out.println("Enter the amount to deposit");
+        int dep = sc.nextInt();
+        double totalAmount = balance+dep;
+        System.out.println("Total amount: " + totalAmount);
     }
     public void Withdrawal()
     {
-        System.out.println("withdrawal");
+        System.out.println("Enter the amount to withdrawal");
+        int withdraw = sc.nextInt();
+        double totalAmount = balance-withdraw;
+        System.out.println("Total amount: " + totalAmount);
     }
 }
-    class Account extends Bank {
+    class Account extends BankAccount {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
             String ch = "";
